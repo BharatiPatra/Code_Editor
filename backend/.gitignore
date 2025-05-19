@@ -1,0 +1,63 @@
+# Node modules (for frontend and backend Node projects)
+**/node_modules/
+**/npm-debug.log
+**/yarn-error.log
+**/pnpm-lock.yaml
+
+# Build output
+**/dist/
+**/build/
+**/.next/
+**/.turbo/
+
+# Dependency directories
+**/venv/
+**/__pycache__/
+**/*.pyc
+
+# Logs
+**/logs
+**/*.log
+**/log/
+
+# Environment files
+**/.env
+**/.env.*.local
+**/.env.local
+**/.env.production
+**/.env.development
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+*.lcov
+
+# Output folders
+out/
+temp/
+tmp/
+
+# Git specific
+.git/
+
+# Lock files (choose based on your package manager)
+package-lock.json
+yarn.lock
+
+# Static and media (if dynamically generated)
+staticfiles/
+media/
+uploads/
+
+# React/Next.js specific (frontend)
+**/.cache/
+**/public/static/
