@@ -78,15 +78,15 @@ builtins.input = async_input
 
       pyodide.setStdout({
         batched: (text) => {
-          output += text;
-          if (outputRef.current) outputRef.current.innerHTML = output;
+          output += text + "\n";
+          if (outputRef.current) outputRef.current.innerText = output;
         },
       });
 
       pyodide.setStderr({
         batched: (text) => {
-          output += text;
-          if (outputRef.current) outputRef.current.innerHTML = output;
+          output += text + "\n";
+          if (outputRef.current) outputRef.current.innerText = output;
         },
       });
 
@@ -112,7 +112,7 @@ await __main__()`;
     } catch (err) {
       setIsError(true);
       if (outputRef.current) {
-        outputRef.current.innerHTML = err.toString();
+        outputRef.current.innerText = err.toString();
       }
     } finally {
       setIsLoading(false);
@@ -230,22 +230,24 @@ await __main__()`;
         </Tooltip>
       </Box>
 
-      <Box
+      <pre
         ref={outputRef}
-        minH="50vh"
-        maxHeight="75vh"
-        overflowY="auto"
-        p={2}
-        whiteSpace="pre-wrap"
-        fontSize="md"
-        bg={isDark ? "#1e1e1e" : "gray.100"}
-        color={isError ? "red.400" : isDark ? "whiteAlpha.800" : "gray.800"}
-        border="1px solid"
-        borderColor={isError ? "red.500" : isDark ? "gray.600" : "gray.300"}
-        borderRadius={4}
+        style={{
+          minHeight: "50vh",
+          maxHeight: "75vh",
+          overflowY: "auto",
+          padding: "8px",
+          fontSize: "1rem",
+          backgroundColor: isDark ? "#1e1e1e" : "#f7fafc",
+          color: isError ? "#fc8181" : isDark ? "#e2e8f0" : "#1a202c",
+          border: "1px solid",
+          borderColor: isError ? "#f56565" : isDark ? "#4a5568" : "#cbd5e0",
+          borderRadius: "4px",
+          whiteSpace: "pre-wrap",
+        }}
       >
         {!pyodide && "Loading Pyodide..."}
-      </Box>
+      </pre>
 
       {inputVisible && (
         <VStack mt={4} align="stretch" spacing={2}>
