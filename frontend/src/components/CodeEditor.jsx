@@ -45,7 +45,7 @@ const CodeEditor = ({ theme, toggleTheme }) => {
   const activeFile = files[activeFileIndex];
   useEffect(() => {
     if (!socketRef.current) {
-      socketRef.current = io("http://localhost:3000");
+      socketRef.current = io(API_URL);
 
       socketRef.current.on("connect", () => {
         console.log("Socket connected:", socketRef.current.id);
