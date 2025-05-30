@@ -182,10 +182,10 @@ await __main__()`;
           </Button>
 
           <Tooltip label="Open file from disk" hasArrow>
-            <Box as="label">
+            <Box as="label" style={{ cursor: "pointer" }}>
               <input
                 type="file"
-                accept=".py,.txt" // or any extensions you want
+                accept=".py,.txt,.pdf" // or any extensions you want
                 style={{ display: "none" }}
                 onChange={async (e) => {
                   const file = e.target.files[0];
@@ -248,7 +248,9 @@ await __main__()`;
       >
         {!pyodide && "Loading Pyodide..."}
       </pre>
-
+      <Text fontSize="xl" color="blue.500" fontWeight="bold">
+        Input{" "}
+      </Text>
       {inputVisible && (
         <VStack mt={4} align="stretch" spacing={2}>
           <Text>{inputPrompt}</Text>
