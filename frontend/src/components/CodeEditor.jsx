@@ -241,6 +241,9 @@ const CodeEditor = ({ theme, toggleTheme }) => {
             onMount={handleEditorMount}
             onChange={handleFileChange}
           />
+          <Text fontSize="xl" fontWeight="bold">
+            Plot
+          </Text>
         </Box>
 
         <Output

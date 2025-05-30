@@ -21,7 +21,7 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
-import { FiFolder, FiDownload, FiRefreshCw, FiShare2 } from "react-icons/fi";
+import {  FiDownload, FiRefreshCw, FiShare2 } from "react-icons/fi";
 
 const FileSelector = ({
   onFolderClick,
@@ -132,22 +132,7 @@ const FileSelector = ({
   return (
     <Box ml={2} mb={4}>
       <HStack spacing={2}>
-        <Tooltip label="Open file from disk" hasArrow>
-          <IconButton
-            icon={<FiFolder />}
-            aria-label="Open Folder"
-            variant="outline"
-            onClick={handleFolderIconClick}
-          />
-        </Tooltip>
-
-        <input
-          type="file"
-          accept=".py"
-          ref={fileInputRef}
-          style={{ display: "none" }}
-          onChange={handleFileChange}
-        />
+     
 
         <Tooltip label="Save current file to disk" hasArrow>
           <IconButton
